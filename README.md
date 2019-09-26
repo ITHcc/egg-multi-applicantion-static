@@ -43,9 +43,26 @@ exports.multiApplicantionStatic = {
 ## Configuration
 
 ```js
-// {app_root}/config/config.default.js
-exports.multiApplicantionStatic = {
-};
+/**
+   * 多应用静态资源入口配置
+   *
+   * @param {string} prefix 二级域名 (根据域名来区分)
+   * @param {string} dir 静态资源路径
+   * @param {object} options
+   * @see https://github.com/koajs/static#readme
+   */
+  config.multiApplicationStatic = [
+    {
+      prefix: 'idm',
+      dir: path.join(appInfo.baseDir, 'app/static/idm'),
+      options: {},
+    },
+    {
+      prefix: 'draft',
+      dir: path.join(appInfo.baseDir, 'app/static/draft'),
+      options: {},
+    },
+  ];
 ```
 
 see [config/config.default.js](config/config.default.js) for more detail.
